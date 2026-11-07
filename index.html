@@ -248,6 +248,42 @@ ol.q { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
 footer { padding-block: 40px 56px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
 footer p { color: var(--muted); font-size: 15px; max-width: 46em; }
 
+/* speech */
+.speech { max-width: 40em; }
+.speech p { font-size: 20px; line-height: 1.65; margin-bottom: 20px; }
+.speech .pull { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; letter-spacing: -0.01em; margin: 34px 0 24px; text-wrap: balance; }
+.speech .pull.big { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; }
+.speech .pull em { font-style: normal; background: linear-gradient(transparent 62%, var(--gold) 62%, var(--gold) 92%, transparent 92%); }
+.speech ul { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; }
+.speech li { font-size: 20px; line-height: 1.5; padding: 12px 16px; border-left: 4px solid var(--green); background: var(--surface); border-radius: 0 10px 10px 0; }
+.speech .cycle { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.speech .cycle span { font-family: var(--font-display); font-weight: 700; font-size: 18px; padding: 9px 14px; border-radius: 999px; background: var(--green-soft); color: var(--ink); }
+.speech .cycle span:nth-child(even) { background: var(--gold-soft); }
+.speech .promise { background: var(--gold-soft); border-radius: 14px; padding: 20px 22px; margin-bottom: 24px; }
+.speech .promise p { margin: 0; font-size: 19px; }
+.speech .sign { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--green); margin-top: 30px; margin-bottom: 0; }
+.speech-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.btn { font: 600 15px var(--font-body); background: var(--ink); color: var(--bg); border: 0; border-radius: 10px; padding: 11px 18px; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn.alt { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.guide { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: 40px; align-items: start; }
+.guide > * { min-width: 0; }
+.cover { background: var(--green); color: #fff; border-radius: 6px; aspect-ratio: 210 / 297; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 8px 8px 0 var(--gold); max-width: 100%; }
+:root:not([data-theme="light"]) .cover { color: #04140D; }
+.cover b { font-family: var(--font-display); font-size: 40px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.cover span { font-family: var(--font-display); font-size: 18px; font-weight: 700; line-height: 1.2; display: block; margin-top: 10px; }
+.cover small { font-family: var(--font-mono); font-size: 11px; opacity: .85; }
+.toc { columns: 2; column-gap: 28px; margin: 0; padding: 0; list-style: none; font-size: 15.5px; }
+.toc li { break-inside: avoid; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.toc li span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-right: 8px; }
+@media (max-width: 900px) {
+  .guide { grid-template-columns: minmax(0, 1fr); }
+  .cover { max-width: 260px; }
+}
+@media (max-width: 600px) {
+  .toc { columns: 1; }
+  .speech p, .speech li { font-size: 18px; }
+}
 @media (max-width: 900px) {
   .hero, .split, .phone-wrap { grid-template-columns: minmax(0, 1fr); }
   .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -272,8 +308,8 @@ footer p { color: var(--muted); font-size: 15px; max-width: 46em; }
     <div class="nav-in">
       <a class="brand" href="#top">GOOD<b>DEED</b></a>
       <div class="links">
-        <a href="#vision">Vision</a><a href="#features">Features</a><a href="#app">App</a><a href="#reputation">Reputation</a>
-        <a href="#trust">Safety</a><a href="#tech">Tech</a><a href="#business">Business</a><a href="#roadmap">Roadmap</a><a href="#mvp">MVP</a><a href="#validate">Validate</a>
+        <a href="#speech">Speech</a><a href="#vision">Vision</a><a href="#features">Features</a><a href="#app">App</a><a href="#reputation">Reputation</a>
+        <a href="#trust">Safety</a><a href="#tech">Tech</a><a href="#business">Business</a><a href="#roadmap">Roadmap</a><a href="#mvp">MVP</a><a href="#validate">Validate</a><a href="#guide">Build guide</a>
       </div>
     </div>
   </nav>
@@ -300,6 +336,58 @@ footer p { color: var(--muted); font-size: 15px; max-width: 46em; }
       <figcaption class="cap">Kindness chain, a V2 feature. One good deed can inspire many more.</figcaption>
     </figure>
   </header>
+
+  <section id="speech">
+    <div class="sec-head">
+      <p class="label">The speech · about four minutes spoken</p>
+      <h2>What if kindness became the next social movement?</h2>
+    </div>
+    <div class="speech" id="speech-text">
+      <p>Today, we live in a world where almost everything is shared on social media.</p>
+      <p>People share their achievements, celebrations, travels, purchases, and everyday moments. We celebrate followers, likes, views, and popularity.</p>
+      <p>But somewhere along the way, we have forgotten to celebrate something much more meaningful: kindness.</p>
+      <p class="pull">Think about this.</p>
+      <ul>
+        <li>Someone buys food for a hungry stranger.</li>
+        <li>A student helps another student who cannot afford books.</li>
+        <li>Someone helps an elderly person cross a busy road.</li>
+        <li>A stranger helps someone who is lost, struggling, or simply having a difficult day.</li>
+      </ul>
+      <p>These moments happen every day. They may seem small, but to the person receiving that help, they can mean everything.</p>
+      <p>And most of these stories disappear without anyone ever hearing about them.</p>
+      <p class="pull big">What if we could change that?</p>
+      <p>What if there was a platform where people could share these acts of kindness, where good deeds received recognition, and where one person's actions could inspire thousands of others?</p>
+      <p class="pull">That is the idea behind <em>GOODDEED.</em></p>
+      <p>We are not trying to build just another social media app. We want to build a community where people are recognized not just for what they own, but for what they contribute to the lives of others.</p>
+      <p>Imagine opening an app and seeing someone help a stranger, support a struggling family, teach a child, or make someone's difficult day a little better.</p>
+      <p>You don't just scroll past it. You feel inspired to do something similar.</p>
+      <p>And when you help someone, you can share your experience, receive appreciation, and encourage someone else to take action.</p>
+      <p>This creates a cycle:</p>
+      <div class="cycle" aria-label="The cycle of kindness">
+        <span>One person helps.</span><span>Another person gets inspired.</span><span>Someone else takes action.</span><span>And kindness keeps spreading.</span>
+      </div>
+      <div class="promise">
+        <p>But there is something important we must remember: helping someone should never become a performance. Nobody should have to record a struggling person, reveal their identity, or ask for publicity to receive help. The person receiving help always comes first. Recognition is optional; kindness is the purpose.</p>
+      </div>
+      <p>We know social media has the power to influence people's behaviour. It shapes trends, conversations, and aspirations.</p>
+      <p>So why can't we use that same power to encourage something positive?</p>
+      <p>Why should popularity only come from entertainment, controversy, or lifestyle content?</p>
+      <p>Why can't someone become known for helping people?</p>
+      <p>Why can't doing good become something people feel proud to be part of?</p>
+      <p>GOODDEED is built on a simple belief:</p>
+      <p class="pull">The world doesn't need another platform that only captures people's attention. It needs a platform that encourages people to make a difference.</p>
+      <p>We may not be able to solve every problem. We may not be able to help everyone.</p>
+      <p>But if this platform inspires one person to help another, and that action inspires someone else, we have started something meaningful.</p>
+      <p>Our goal is not to measure how good a person is. It is to make good actions more visible, make helping easier, and build a community where kindness is appreciated.</p>
+      <p class="pull big">Because a like can make someone's day, but an act of kindness can change someone's life.</p>
+      <p>Let's build a platform where helping others is worth sharing, where kindness creates connections, and where the next big social trend is simply doing good.</p>
+      <p class="sign">GOODDEED — Make kindness the new social currency.</p>
+    </div>
+    <div class="speech-tools">
+      <button class="btn alt" id="copy-speech" type="button">Copy speech text</button>
+      <span class="label" id="copy-msg" role="status"></span>
+    </div>
+  </section>
 
   <section id="vision">
     <div class="sec-head">
@@ -794,6 +882,50 @@ footer p { color: var(--muted); font-size: 15px; max-width: 46em; }
     <div class="callout" style="margin-top:16px"><strong>Recommendation: a hybrid</strong>The social feed is the entry point, and actual assistance is the central measure of success. That gives people a reason to join while ensuring the platform creates real value.</div>
   </section>
 
+  <section id="guide">
+    <div class="sec-head">
+      <p class="label">Build guide · PDF, 24 pages</p>
+      <h2>How to build GOODDEED, start to finish</h2>
+      <p>A beginner-friendly guide with the database, security rules and code for every MVP feature, plus testing, store publishing and the pilot.</p>
+    </div>
+    <div class="guide">
+      <div class="cover" aria-hidden="true">
+        <div><b>GOODDEED</b><span>How to build the app, start to finish</span></div>
+        <small>React Native · Expo · Supabase<br>November 2026</small>
+      </div>
+      <div>
+        <div class="speech-tools" style="margin:0 0 22px">
+          <a class="btn" href="GOODDEED_Build_Guide.pdf" target="_blank" rel="noopener">Open the PDF</a>
+          <span class="label">Opens in a new tab. Save it from there.</span>
+        </div>
+        <ol class="toc">
+          <li><span>01</span>What you are building</li>
+          <li><span>02</span>Before you write code</li>
+          <li><span>03</span>Install your tools</li>
+          <li><span>04</span>Create the app</li>
+          <li><span>05</span>Create the Supabase project</li>
+          <li><span>06</span>Design the database</li>
+          <li><span>07</span>Lock it down with Row Level Security</li>
+          <li><span>08</span>Sign up and sign in</li>
+          <li><span>09</span>The home feed</li>
+          <li><span>10</span>Create a good deed, with photos</li>
+          <li><span>11</span>Appreciation and comments</li>
+          <li><span>12</span>Help requests and offers</li>
+          <li><span>13</span>Recipient confirmation</li>
+          <li><span>14</span>Reputation, badges, leaderboard</li>
+          <li><span>15</span>Report, block and moderate</li>
+          <li><span>16</span>Privacy and safety checklist</li>
+          <li><span>17</span>Test it properly</li>
+          <li><span>18</span>Publish to the stores</li>
+          <li><span>19</span>Run the pilot and measure</li>
+          <li><span>20</span>After version 1</li>
+          <li><span>21</span>A 16-week plan</li>
+          <li><span>A–B</span>Troubleshooting and glossary</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p class="brand" style="font-size:24px">GOOD<b>DEED</b></p>
     <p><strong style="color:var(--ink)">Next milestone:</strong> a complete Product Requirements Document covering every screen, button, feature, user journey, database requirement, API requirement and business rule. It becomes the master document through development.</p>
@@ -869,6 +1001,18 @@ footer p { color: var(--muted); font-size: 15px; max-width: 46em; }
     document.getElementById('pbar').style.width = p + '%';
   }
   update();
+
+  // copy speech
+  var cb = document.getElementById('copy-speech'), msg = document.getElementById('copy-msg');
+  cb.addEventListener('click', function () {
+    var box = document.getElementById('speech-text'), txt = box.innerText;
+    function fallback() {
+      try { var r = document.createRange(); r.selectNodeContents(box); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Text selected. Copy it with your keyboard.'; } catch (e) { msg.textContent = 'Select the text above to copy it.'; }
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function () { msg.textContent = 'Speech copied.'; }, fallback);
+    } catch (e) { fallback(); }
+  });
 })();
 </script>
 
